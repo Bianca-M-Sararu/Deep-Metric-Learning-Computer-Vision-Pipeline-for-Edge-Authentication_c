@@ -1,0 +1,168 @@
+
+:root {
+  --c0:#0E004E; --c1:#7DCDFF; --c2:#568DD0; --c3:#68DFD9; --c4:#268AEE;
+  --text:#EAF2FF; --muted:rgba(234,242,255,.72);
+  --glass: rgba(255,255,255,.08); --glass2: rgba(125,205,255,.12);
+  --border: rgba(125,205,255,.22);
+  --shadow: 0 20px 70px rgba(0,0,0,.35); --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 15% 5%, rgba(38,138,238,.35), transparent 60%),
+              radial-gradient(900px 600px at 85% 20%, rgba(104,223,217,.28), transparent 55%),
+              linear-gradient(180deg, #06002E, var(--c0));
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background-image: 
+    linear-gradient(to right, rgba(125,205,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(125,205,255,.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+.topbar {
+  position: sticky; top: 0; z-index: 1000;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, rgba(14,0,78,.72), rgba(14,0,78,.40));
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+
+.topbar__inner {
+  display: flex !important; /* Forțăm flexbox */
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand__mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(125, 205, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Important: taie orice depășește marginile */
+    flex-shrink: 0;
+}
+
+.brand__name { font-weight: 800; font-size: 1.1rem; }
+.brand__tag { font-size: 11px; color: var(--muted); display: block; }
+
+
+.nav { 
+  display: flex !important; 
+  flex-direction: row !important; 
+  align-items: center; 
+  gap: 24px; 
+}
+
+.nav__link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s;
+  white-space: nowrap; /* Împiedică textul să sară pe rândul următor */
+}
+
+.nav__link:hover { color: var(--text); }
+
+
+.btn {
+  border: 1px solid transparent; background: transparent; color: var(--text);
+  padding: 10px 14px; border-radius: 14px; font-weight: 700; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn--ghost { background: var(--glass); border-color: var(--border); }
+.btn--primary { background: var(--c4); }
+
+.nav-user-dropdown { 
+    position: relative;
+    padding-bottom: 15px; /* Creează un "pod" invizibil sub buton */
+    margin-bottom: -15px; /* Compensează padding-ul pentru a nu muta restul elementelor */
+}
+
+.dropdown-content-glass {
+  position: absolute;
+    right: 0;
+    top: 100%; /* Se va lipi exact unde se termină padding-ul de mai sus */
+    background: #0A0032;
+    border: 1px solid var(--nav-border);
+    border-radius: 14px;
+    min-width: 180px;
+    
+    /* Control afișare */
+    display: block; 
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out; /* Oferă acea senzație de "smooth" */
+    
+    padding: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+}
+.nav-user-dropdown:hover .dropdown-content-glass { visibility: visible;
+    opacity: 1;
+    transform: translateY(0);}
+.dropdown-content-glass a {
+  display: block; padding: 10px 14px; color: var(--text);
+  text-decoration: none; font-size: 13px; border-radius: 8px;
+}
+.dropdown-content-glass a:hover { background: var(--glass2); }
+
+/* === CONTINUT DASHBOARD === */
+.dashboard-head { padding: 40px 0 20px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 700; color: var(--c3);
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c3); box-shadow: 0 0 10px var(--c3); }
+
+.admin-card {
+  background: linear-gradient(180deg, rgba(125,205,255,.10), rgba(14,0,78,.30));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 16px; font-size: 11px; color: var(--muted); text-transform: uppercase; border-bottom: 1px solid var(--border); }
+td { padding: 16px; font-size: 14px; border-bottom: 1px solid rgba(125,205,255,.05); }
+
+.btn-rfid {
+  background: rgba(104,223,217,.15); color: var(--c3);
+  border: 1px solid rgba(104,223,217,.3);
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-weight: 700;
+}

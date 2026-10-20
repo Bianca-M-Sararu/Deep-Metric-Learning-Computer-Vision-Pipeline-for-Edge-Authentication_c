@@ -1,0 +1,125 @@
+
+:root {
+  --nav-bg: rgba(14, 0, 78, 0.75);
+  --nav-border: rgba(125, 205, 255, 0.22);
+  --nav-text: #EAF2FF;
+  --nav-muted: rgba(234, 242, 255, 0.72);
+  --nav-accent: #68DFD9;
+  --nav-glass: blur(12px);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: var(--nav-bg);
+  backdrop-filter: var(--nav-glass);
+  -webkit-backdrop-filter: var(--nav-glass);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.topbar__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: url("/static/images/Logo_IA.png") center / 75% no-repeat, rgba(255,255,255,0.05);
+  border: 1px solid var(--nav-border);
+  flex-shrink: 0;
+}
+
+.brand__name {
+  color: var(--nav-text);
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.brand__tag {
+  color: var(--nav-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+.nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 25px;
+}
+
+.nav__link {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-logo-img {
+    max-width: 75%; 
+    max-height: 75%;
+    object-fit: contain; 
+
+.nav__link:hover {
+  color: var(--nav-text);
+}
+
+
+.nav-user-dropdown {
+  position: relative;
+}
+
+.dropdown-content-glass {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  background: #0E004E;
+  border: 1px solid var(--nav-border);
+  border-radius: 14px;
+  min-width: 180px;
+  display: none;
+  padding: 8px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.nav-user-dropdown:hover .dropdown-content-glass {
+  display: block;
+}
+
+.dropdown-content-glass a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.dropdown-content-glass a:hover {
+  background: rgba(125, 205, 255, 0.1);
+}
+
+.logout-text { color: #FF6B6B !important; } 
+}

@@ -1,0 +1,76 @@
+
+.details-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    align-items: flex-start;
+}
+
+.main-info { 
+    flex: 2; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
+}
+
+.side-info { 
+    flex: 1; 
+    position: sticky; 
+    top: 20px; 
+}
+
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.info-label { 
+    color: rgba(255,255,255,0.5); 
+    font-size: 14px; 
+}
+
+.info-value { 
+    color: white; 
+    font-weight: 500; 
+}
+
+
+.password-mask {
+    cursor: pointer;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.password-mask:hover {
+    color: #3b82f6;
+}
+
+
+.room-tag {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #3b82f6;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}

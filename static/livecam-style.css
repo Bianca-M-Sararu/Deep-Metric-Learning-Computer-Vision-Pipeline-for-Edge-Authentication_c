@@ -1,0 +1,108 @@
+
+.pill-live {
+    color: #ff3b30 !important;
+    border-color: rgba(255, 59, 48, 0.3) !important;
+}
+
+.dot-live {
+    background: #ff3b30 !important;
+    box-shadow: 0 0 10px #ff3b30 !important;
+    animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 59, 48, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+
+.livecam-title {
+    margin-top: 15px; 
+    font-size: 36px; 
+    font-weight: 800;
+}
+
+.livecam-card {
+    text-align: center; 
+    padding: 40px 20px;
+}
+
+.livecam-card-header {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px;
+    border-bottom: none; 
+}
+
+.livecam-subtitle {
+    font-size: 20px; 
+    color: white;
+    margin: 0;
+}
+
+
+.video-feed {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    background-color: #06002E; /* Se îmbină cu tema închisă */
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.livecam-info-text {
+    color: var(--muted); 
+    font-size: 13px; 
+    margin-top: 25px;
+    line-height: 1.5;
+}
+
+
+.digital-lcd-panel {
+    background: rgba(4, 25, 15, 0.9); 
+    border: 2px solid rgba(0, 255, 102, 0.3);
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin: 0 auto 25px auto;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: inset 0 0 20px rgba(0, 255, 100, 0.1), 0 10px 20px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+
+.digital-lcd-panel::before {
+    content: "";
+    position: absolute;
+    top: 12px; 
+    right: 12px;
+    width: 6px; 
+    height: 6px;
+    background: #00ff66;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff66;
+    animation: pulse-green 1.5s infinite alternate;
+}
+
+@keyframes pulse-green {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; box-shadow: 0 0 12px #00ff66; }
+}
+
+.lcd-text {
+    font-family: 'Share Tech Mono', monospace;
+    color: #00ff66; 
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+    margin: 0;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 1px;
+}
