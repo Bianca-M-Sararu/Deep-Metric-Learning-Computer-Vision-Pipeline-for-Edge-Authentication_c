@@ -52,6 +52,8 @@ Web-Based Audit Dashboard: Responsive Flask interface for monitoring access logs
 **State 3** (VALIDATE_ALL): Dual-factor correlation check (Biometrics + RFID ID).
 
 **State 4** (ACCESS_GRANT / DENY): Physical relay triggers for unlocked access OR immediate fail-secure lockdown occurs. Log event dispatched to Firebase.
+
+
 ------------------------------------------------------------------------------------------------------------------------------------
 
 # Performance Benchmarks
